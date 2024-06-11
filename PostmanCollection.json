@@ -1,0 +1,126 @@
+{
+	"info": {
+		"_postman_id": "824d0f68-b1ed-42c3-8301-ab4e1b65a588",
+		"name": "DeliveryServiceMicroservices",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "29519347"
+	},
+	"item": [
+		{
+			"name": "delivery-service",
+			"item": [
+				{
+					"name": "cargos",
+					"item": [
+						{
+							"name": "Create Cargo",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"vehicleNumber\": \"ABC123\",\r\n    \"description\": \"Cargo 12 Gateway Test\",\r\n    \"weight\": 159.99,\r\n    \"status\": \"DELIVERED\"\r\n  }",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8072/delivery-service/api/cargos",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8072",
+									"path": [
+										"delivery-service",
+										"api",
+										"cargos"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "email-service",
+			"item": [
+				{
+					"name": "Get ElasticSearch data",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9200/emails/_search",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9200",
+							"path": [
+								"emails",
+								"_search"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get By Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9200/emails/_doc/r1FP-o8BUMFO4ETCZInN",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9200",
+							"path": [
+								"emails",
+								"_doc",
+								"r1FP-o8BUMFO4ETCZInN"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update a document",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"doc\": {\r\n        \"status\": \"ERROR\"\r\n    }\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9200/emails/_update/j--h_Y8BqNQe_LME3xl2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9200",
+							"path": [
+								"emails",
+								"_update",
+								"j--h_Y8BqNQe_LME3xl2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
