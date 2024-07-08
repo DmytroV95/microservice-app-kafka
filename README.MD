@@ -111,9 +111,9 @@ Add the following lines to your `.env` file, replacing `your_email@example.com` 
 
 ```env
 SPRING_MAIL_USERNAME=email@gmail.com (your real email)
-SPRING_MAIL_PASSWORD=dfdfdfljbjvhdf (application password)
+SPRING_MAIL_PASSWORD=password (application password)
 
-TO_EMAIL=dmytro.varukha@gmail.com (email wher you want send message)
+TO_EMAIL=to-email@gmail.com (email where you want to send the message)
 ```
 ####
 
